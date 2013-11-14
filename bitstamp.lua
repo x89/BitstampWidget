@@ -21,6 +21,5 @@ function bitstamp_table()
 	return(json.decode(resp[1]))
 end
 
-stamp = bitstamp_table()
-
+local stamp = bitstamp_table()
 print(stamp["last"])
