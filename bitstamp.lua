@@ -1,13 +1,13 @@
 #!/usr/bin/env lua
 -- Bitstamp widget for Awesome WM 3.5
--- 12/11/13 - David Trail <bitwidget@trailbeans.eu>
+-- David Trail <bitwidget@trailbeans.eu>
 
 local json = require('dkjson')
 local https = require('ssl.https')
 
 function bitstamp_table()
+	-- Makes an HTTPS request to the bitstamp ticker to get the latest price.
 	-- Keys: low, ask, high, volume, timestamp, last, bid
-	-- for k, v in pairs(bitstamp_table) do print(k, v) end
 	local resp = table
 
 	https.request{
@@ -21,10 +21,6 @@ function bitstamp_table()
 	return(json.decode(resp[1]))
 end
 
-
 stamp = bitstamp_table()
-
--- Keys: low, ask, high, volume, timestamp, last, bid
--- for k, v in pairs(bitstamp_table()) do print(k, v) end
 
 print(stamp["last"])
