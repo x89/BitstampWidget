@@ -22,6 +22,7 @@ function get_price(key)
 end
 
 last_price = get_price("last") -- This must be global (so that awesome-client can alter it)
+btc_colour = "#fff"
 
 -- {{{ Wibox
 bitstampwidget = wibox.widget.textbox()
@@ -29,7 +30,7 @@ bitstampwidget = wibox.widget.textbox()
 -- Register the Bitstamp timer listner
 bitstamp_timer = timer({ timeout = 1 })
 bitstamp_timer:connect_signal("timeout", function()
-	bitstampwidget:set_text('$' .. last_price .. ' ')
+	bitstampwidget:set_markup('<span color="' .. btc_colour ..'">$' .. last_price .. '</span> ')
 end)
 bitstamp_timer:start()
 
