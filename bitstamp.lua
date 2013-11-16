@@ -4,6 +4,7 @@
 
 local json = require('dkjson')
 local https = require('ssl.https')
+local posix = require('posix')
 
 function bitstamp_table()
 	-- Makes an HTTPS request to the bitstamp ticker to get the latest price.
@@ -23,11 +24,8 @@ end
 
 local stamp = bitstamp_table()
 
---[[
-if not stamp then
-	local posix = require('posix')
-	posix.sleep(60)
+if stamp then
+	print(stamp["last"])
+else
+	posix.sleep(60) -- Probably went over the rate limit.
 end
---]]
-
-print(stamp["last"])
