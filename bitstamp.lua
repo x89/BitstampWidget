@@ -22,4 +22,10 @@ function bitstamp_table()
 end
 
 local stamp = bitstamp_table()
+
+if (not stamp) then
+	local posix = require('posix')
+	posix.sleep(60)
+end
+
 print(stamp["last"])
