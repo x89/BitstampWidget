@@ -13,5 +13,5 @@ do {
 	`echo "btc_colour = '$colour'" | awesome-client`;
 
 	$prev=$last;
-	sleep 1;
+	sleep 2;
 } while 1
