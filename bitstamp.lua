@@ -18,14 +18,16 @@ function bitstamp_table()
 
 	assert(resp[1])
 
-	return(json.decode(resp[1]))
+	return json.decode(resp[1])
 end
 
 local stamp = bitstamp_table()
 
-if (not stamp) then
+--[[
+if not stamp then
 	local posix = require('posix')
 	posix.sleep(60)
 end
+--]]
 
 print(stamp["last"])
