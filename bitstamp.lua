@@ -22,5 +22,4 @@ function bitstamp_table()
 end
 
 local stamp = bitstamp_table()
-assert(stamp)
 print(stamp["last"])
