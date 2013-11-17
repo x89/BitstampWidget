@@ -17,7 +17,7 @@ function bitstamp_table()
 		protocol = "tlsv1"
 	}
 
-	assert(resp[1])
+	assert(resp, "Couldn't establish a connection.")
 
 	return json.decode(resp[1])
 end
