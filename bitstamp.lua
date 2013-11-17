@@ -11,13 +11,11 @@ function bitstamp_table()
 	-- Keys: low, ask, high, volume, timestamp, last, bid
 	local resp = table
 
-	https.request{
+	assert(https.request{
 		url = "https://www.bitstamp.net:443/api/ticker/",
 		sink = ltn12.sink.table(resp),
 		protocol = "tlsv1"
-	}
-
-	assert(resp, "Couldn't establish a connection.")
+	}, "Couldn't establish a connection.")
 
 	return json.decode(resp[1])
 end
