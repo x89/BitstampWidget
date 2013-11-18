@@ -1,2 +1,5 @@
 *.swp
 login.conf
+login.conf
+*.conf
+bitstamp

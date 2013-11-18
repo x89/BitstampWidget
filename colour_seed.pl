@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
-$prev = 0;
-$colour = "#fff";
+my $prev = 0;
+my $colour = "#fff";
 do {
 	$last=`lua ./bitstamp.lua`;
 	$last=sprintf '%.2f', $last;
