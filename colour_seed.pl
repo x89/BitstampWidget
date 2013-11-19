@@ -5,7 +5,7 @@ use warnings;
 
 my ($prev, $last, $colour) = (0, 0, "#fff");
 
-do {
+while ("loop forever") {
 	$last=`lua ./bitstamp.lua`;
 	next unless $last;
 	$last=sprintf '%.2f', $last;
@@ -18,4 +18,4 @@ do {
 
 	$prev=$last;
 	sleep 10;
-} while 1
+}
