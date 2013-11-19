@@ -17,6 +17,8 @@ function bitstamp_table()
 		protocol = "tlsv1"
 	}, "Couldn't establish a connection.")
 
+	--assert(json.decode(resp[1]), "API call returned failure.")
+
 	return json.decode(resp[1])
 end
 
@@ -25,5 +27,5 @@ local stamp = bitstamp_table()
 if stamp then
 	print(stamp["last"])
 else
-	posix.sleep(60) -- Probably went over the rate limit.
+	posix.sleep(30) -- Probably went over the rate limit.
 end
