@@ -17,5 +17,5 @@ while ("loop forever") {
 	`echo "btc_colour = '$colour'" | awesome-client`;
 
 	$prev=$last;
-	sleep 10;
+	sleep 2;
 }
