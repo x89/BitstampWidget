@@ -1,9 +1,13 @@
 #!/usr/bin/env perl
 
-my $prev = 0;
-my $colour = "#fff";
+use strict;
+use warnings;
+
+my ($prev, $last, $colour) = (0, 0, "#fff");
+
 do {
 	$last=`lua ./bitstamp.lua`;
+	next unless $last;
 	$last=sprintf '%.2f', $last;
 
 	$colour = "#0f0" if $last > $prev;
@@ -13,5 +17,5 @@ do {
 	`echo "btc_colour = '$colour'" | awesome-client`;
 
 	$prev=$last;
-	sleep 2;
+	sleep 10;
 } while 1
