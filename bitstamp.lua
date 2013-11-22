@@ -24,8 +24,4 @@ end
 
 local stamp = bitstamp_table()
 
-if stamp then
-	print(stamp["last"])
-else
-	posix.sleep(30) -- Probably went over the rate limit.
-end
+print(stamp["last"])
