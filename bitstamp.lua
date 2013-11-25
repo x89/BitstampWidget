@@ -19,9 +19,11 @@ function bitstamp_table()
 
 	--assert(json.decode(resp[1]), "API call returned failure.")
 
-	return json.decode(resp[1])
+	return assert(json.decode(resp[1]))
 end
 
 local stamp = bitstamp_table()
 
-print(stamp["last"])
+if stamp then
+	print(stamp["last"])
+end
