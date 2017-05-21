@@ -18,3 +18,7 @@ This is based on Arch Linux but will be similar across distros:
 * community/lua-sec
 * aur/lua-dkjson
 * aur/lua-posix
+
+## Historical versions / Releases
+
+See the following page for releases older releases: https://github.com/x89/BitstampWidget/releases
