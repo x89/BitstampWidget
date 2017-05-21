@@ -1,6 +1,5 @@
 #!/usr/bin/env lua
 -- Bitstamp widget for Awesome WM 3.5
--- David Trail <bitwidget@trailbeans.eu>
 
 local json = require('dkjson')
 local https = require('ssl.https')
