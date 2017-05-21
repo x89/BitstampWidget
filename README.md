@@ -2,6 +2,8 @@
 
 Awesome WM Bitstamp Widget! Simple as that. Ads a "last price" ticker to your Awesome panel to show you the current Bitcoin price.
 
+![Example of the widget in use](example.png)
+
 ## Installation
 
 You have to insert pieces of example-rc.lua.txt into your ~/.config/awesome/rc.lua in order to make the code that actually updates your window manager work perfectly.
