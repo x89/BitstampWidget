@@ -1,3 +1,5 @@
+-- Paste the following somewhere above Wibox
+
 last_price = 0.00
 
 btc_colour = "#fff"
@@ -12,6 +14,4 @@ bitstamp_timer:connect_signal("timeout", function()
 end)
 bitstamp_timer:start()
 
-
--- Once you've added the above code somewhere above the widgets section
--- add the "bitstampwidget" to the array of items in your taskbar.
+-- Add "bitstampwidget" to the array of items in your taskbar, under wibox, next to the clock for example.
