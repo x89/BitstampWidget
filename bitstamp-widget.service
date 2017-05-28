@@ -1,1 +1,10 @@
-/home/napalm/.config/systemd/user/bitstamp-widget.service
+[Unit]
+Description=Starts the Bitcoin Widget for Awesome WM
+Wants=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/perl "${HOME}/BitstampWidget/colour_seed.pl"
+
+[Install]
+WantedBy=graphical.target
