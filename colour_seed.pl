@@ -3,10 +3,15 @@
 use strict;
 use warnings;
 
+use File::Basename;
+
+my ($name, $path, $suffix) = fileparse($0);
+my $lua_script = $path."bitstamp.lua";
+
 my ($prev, $last, $colour) = (0, 0, "#fff");
 
 while ("loop forever") {
-	$last=`lua ./bitstamp.lua`;
+	$last=`lua $lua_script`;
 	next unless $last;
 	$last=sprintf '%.2f', $last;
 
